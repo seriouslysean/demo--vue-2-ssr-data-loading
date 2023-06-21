@@ -14,9 +14,16 @@
     "vuex": "^3.6.2"
   },
   "devDependencies": {
+    "babel-loader": "^9.1.2",
+    "clean-webpack-plugin": "^4.0.0",
     "eslint": "^8.43.0",
     "eslint-plugin-vue": "^9.15.0",
-    "nodemon": "^2.0.22"
+    "html-webpack-plugin": "^5.5.3",
+    "nodemon": "^2.0.22",
+    "vue-loader": "^17.2.2",
+    "vue-template-compiler": "^2.7.14",
+    "webpack": "^5.88.0",
+    "webpack-cli": "^5.1.4"
   },
   "homepage": "https://github.com/seriouslysean/demo--vue-2-ssr-data-loading#readme",
   "keywords": [
@@ -30,6 +37,7 @@
     "url": "git+https://github.com/seriouslysean/demo--vue-2-ssr-data-loading.git"
   },
   "scripts": {
+    "build": "webpack --config config/webpack.base.js",
     "dev": "nodemon server.js",
     "lint": "eslint --ext .js,.vue src",
     "start": "node server.js",
