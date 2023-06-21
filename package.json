@@ -7,7 +7,6 @@
     "url": "https://github.com/seriouslysean/demo--vue-2-ssr-data-loading/issues"
   },
   "dependencies": {
-    "express": "^4.18.2",
     "vue": "2.7",
     "vue-router": "^3.6.5",
     "vue-server-renderer": "2.7",
@@ -15,15 +14,17 @@
   },
   "devDependencies": {
     "babel-loader": "^9.1.2",
-    "clean-webpack-plugin": "^4.0.0",
     "eslint": "^8.43.0",
     "eslint-plugin-vue": "^9.15.0",
     "html-webpack-plugin": "^5.5.3",
     "nodemon": "^2.0.22",
-    "vue-loader": "^17.2.2",
+    "rimraf": "^5.0.1",
+    "vue-loader": "^15.10.1",
     "vue-template-compiler": "^2.7.14",
     "webpack": "^5.88.0",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "webpack-merge": "^5.9.0",
+    "webpack-node-externals": "^3.0.0"
   },
   "homepage": "https://github.com/seriouslysean/demo--vue-2-ssr-data-loading#readme",
   "keywords": [
@@ -37,7 +38,10 @@
     "url": "git+https://github.com/seriouslysean/demo--vue-2-ssr-data-loading.git"
   },
   "scripts": {
-    "build": "webpack --config config/webpack.base.js",
+    "_build:client": "webpack --config config/webpack.client.js",
+    "_build:server": "webpack --config config/webpack.server.js",
+    "_clean": "rimraf dist/*",
+    "build": "npm run _clean && npm run _build:client && npm run _build:server",
     "dev": "nodemon server.js",
     "lint": "eslint --ext .js,.vue src",
     "start": "node server.js",

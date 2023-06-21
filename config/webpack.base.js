@@ -1,7 +1,6 @@
 const { resolve } = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
 
 const paths = require('./paths')
@@ -11,7 +10,7 @@ const isProd = NODE_ENV === 'production'
 
 module.exports = {
   mode: NODE_ENV,
-  entry: [paths.src + '/app.js'],
+  // entry defined in client config
   devtool: isProd
     ? 'source-map'
     : 'cheap-module-source-map',
@@ -35,7 +34,6 @@ module.exports = {
   },
   plugins: [
     new VueLoaderPlugin(),
-    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: 'Vue SSR',
       template: paths.src + '/index.template.html', // template file
