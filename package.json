@@ -14,6 +14,8 @@
     "vuex": "^3.6.2"
   },
   "devDependencies": {
+    "eslint": "^8.43.0",
+    "eslint-plugin-vue": "^9.15.0",
     "nodemon": "^2.0.22"
   },
   "homepage": "https://github.com/seriouslysean/demo--vue-2-ssr-data-loading#readme",
@@ -29,6 +31,7 @@
   },
   "scripts": {
     "dev": "nodemon server.js",
+    "lint": "eslint --ext .js,.vue src",
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
