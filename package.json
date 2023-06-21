@@ -1,0 +1,35 @@
+{
+  "name": "demo--vue-2-ssr-data-loading",
+  "description": "Demo of SSR functionality in Vue 2.6+",
+  "version": "0.1.0",
+  "author": "Sean Kennedy <sean@codeserious.com>",
+  "bugs": {
+    "url": "https://github.com/seriouslysean/demo--vue-2-ssr-data-loading/issues"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "vue": "2.7",
+    "vue-router": "^3.6.5",
+    "vue-server-renderer": "2.7",
+    "vuex": "^3.6.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "homepage": "https://github.com/seriouslysean/demo--vue-2-ssr-data-loading#readme",
+  "keywords": [
+    "SSR",
+    "Vue"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seriouslysean/demo--vue-2-ssr-data-loading.git"
+  },
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
