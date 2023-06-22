@@ -36,7 +36,7 @@ module.exports = {
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       title: 'Vue SSR',
-      template: paths.src + '/index.template.html', // template file
+      template: paths.src + '/modules/server/index.template.html', // template file
       filename: 'index.html', // output file
     }),
   ]

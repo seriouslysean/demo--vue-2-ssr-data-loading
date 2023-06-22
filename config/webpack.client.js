@@ -4,5 +4,7 @@ const baseConfig = require('./webpack.base.js')
 const paths = require('./paths')
 
 module.exports = merge(baseConfig, {
-  entry: paths.src + '/entry-client.js',
+  entry: {
+    app: paths.src + '/entry-client.js',
+  },
 })

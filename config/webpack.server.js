@@ -6,7 +6,9 @@ const baseConfig = require('./webpack.base.js')
 const paths = require('./paths')
 
 module.exports = merge(baseConfig, {
-  entry: paths.src + '/entry-server.js',
+  entry: {
+    server: paths.src + '/entry-server.js',
+  },
   // This allows webpack to handle dynamic imports in a Node-appropriate
   // fashion, and also tells `vue-loader` to emit server-oriented code when
   // compiling Vue components.
