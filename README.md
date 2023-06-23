@@ -1,10 +1,16 @@
-# demo--vue-2-ssr-data-loading
+# Vue 2 SSR Data Loading Demo
 
-Example of the Vue 2 data loading pattern suggested in their SSR documentation
+Example implementation of the Vue 2 data loading pattern suggested in the SSR documentation, https://v2.ssr.vuejs.org/.
 
 No Hot Module Reloading
 
-https://v2.ssr.vuejs.org/
+## Explanation
+
+- 2 different bundles, `server` + `client` via webpack
+- Server rendered content that waits for data to be fetched using `serverPrefetch` via an action from the Vuex store
+- Client side data loading via the `mounted` hook and a watcher
+
+## Run Locally
 
 To run this locally:
 
