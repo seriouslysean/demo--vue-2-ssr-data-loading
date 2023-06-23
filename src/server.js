@@ -12,7 +12,7 @@ const clientManifest = require('../dist/vue-ssr-client-manifest.json');
 const renderer = createBundleRenderer(serverBundle, {
   runInNewContext: false,
   template,
-  // clientManifest,
+  clientManifest,
 });
 
 // TODO Move this to a public dir and copy files
