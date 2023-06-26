@@ -1,15 +1,15 @@
-const { resolve } = require('path');
+const { join } = require('path');
 const { merge } = require('webpack-merge');
 const nodeExternals = require('webpack-node-externals');
 const VueSSRServerPlugin = require('vue-server-renderer/server-plugin')
 
 const baseConfig = require('./webpack.base');
 
-const projectRoot = resolve(__dirname, '..');
+const projectRoot = join(__dirname, '..');
 
 module.exports = merge(baseConfig, {
     target: 'node',
-    entry: resolve(projectRoot, 'src/entry-server.js'),
+    entry: join(projectRoot, 'src/entry-server.js'),
     output: {
         libraryTarget: 'commonjs2',
         filename: 'entry-server.bundle.js',

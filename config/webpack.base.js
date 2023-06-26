@@ -1,16 +1,13 @@
-const { resolve } = require('path');
+const { join } = require('path');
 const { VueLoaderPlugin } = require('vue-loader');
 
-const projectRoot = resolve(__dirname, '..');
-
-const nodeEnv = process.env.NODE_ENV || 'development';
-const isProd = nodeEnv === 'production';
-const environment = isProd ? 'production' : 'development';
+const { environment, paths, isProd } = require('./config');
 
 module.exports = {
   mode: environment,
+  devtool: 'inline-source-map',
   output: {
-      path: resolve(projectRoot, 'dist'),
+      path: paths.dist,
       publicPath: '/',
       filename: isProd ? '[name].[contenthash].js' : '[name].js',
       chunkFilename: isProd
@@ -19,9 +16,9 @@ module.exports = {
   },
   resolve: {
       alias: {
-          '~': resolve(projectRoot, 'src'),
-          '~components': resolve(projectRoot, 'src/components'),
-          '~routes': resolve(projectRoot, 'src/routes'),
+          '~': paths.src,
+          '~components': join(paths.src, 'components'),
+          '~routes': join(paths.src, 'routes'),
       },
       extensions: ['.js', '.ts', '.d.ts'],
   },
@@ -39,9 +36,9 @@ module.exports = {
             test: /\.css$/,
             use: [
               'vue-style-loader',
-              'css-loader'
-            ]
-          }
+              'css-loader',
+            ],
+          },
       ],
   },
   plugins: [

@@ -10,3 +10,9 @@ if (window.__INITIAL_STATE__) {
 app.$mount('#app');
 
 window.app = app;
+
+// Enable HMR during local dev
+if (process.env.NODE_ENV !== 'production' && module.hot) {
+  console.debug('Enabling hot module reloading');
+  module.hot.accept();
+}
